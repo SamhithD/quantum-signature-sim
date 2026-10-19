@@ -1,0 +1,21 @@
+{
+  "seed": 2026,
+  "n_runs": 1000,
+  "n_records_per_run": 20000,
+  "qday_triangular": [
+    2027.5,
+    2029.5,
+    2038.0
+  ],
+  "qday_sample_mean": 2031.68,
+  "qday_sample_median": 2031.35,
+  "fig3_max_mc_standard_error_pct": 0.295,
+  "fig4_max_mc_standard_error_pct": 0.757,
+  "fig5_max_mc_standard_error_pct": 0.62,
+  "checks": {
+    "fig3_values_in_0_100": true,
+    "fig3_scenario_order_S0<=S1<=S2<=S3_every_year": true,
+    "fig4_scenario_order_S0>=S1>=S2>=S3": true,
+    "fig5_exposure_nondecreasing_with_later_deadline": true
+  }
+}

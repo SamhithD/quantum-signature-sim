@@ -1,0 +1,5 @@
+Scenario,Mean exposed (%),P90 exposed (%)
+S0 Status quo,86.9,96.2
+S1 Fix A,71.3,92.2
+S2 Fixes A+B,36.9,71.8
+S3 Fixes A+B+C,16.0,31.6
