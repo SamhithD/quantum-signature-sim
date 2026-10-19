@@ -23,8 +23,8 @@ forgery would verify identically (the temporal-authenticity gap).
 Policy scenarios (cumulative, mirroring Section IV of the paper)
 ---------------------------------------------------------------
   S0  Status quo                     - no legal change
-  S1  Fix A                          - PQC algorithms notified into the
-                                       Second Schedule under Sec. 3A(4)
+  S1  Fix A                          - ML-DSA / SLH-DSA added to the technical
+                                       standards licensed CAs follow (Sec. 18)
   S2  Fixes A + B                    - plus Sec. 3 time-stamp safe harbour
   S3  Fixes A + B + C                - plus binding regulatory mandate with
                                        deadline (default: December 2028)
@@ -70,7 +70,7 @@ QDAY_MIN, QDAY_MODE, QDAY_MAX = 2027.5, 2029.5, 2038.0
 QDAY_POINT = 2029.5      # single-point estimate used in Fig. 5
 
 # Policy timing (from the paper / DST roadmap [10])
-NOTIFICATION_YEAR = 2027.0   # Fix A: Second Schedule notification
+NOTIFICATION_YEAR = 2027.0   # Fix A: PQC signature algorithms recognised
 TIMESTAMP_LAW_YEAR = 2028.0  # Fix B: Sec. 3 time-stamp amendment in force
 MANDATE_START = 2027.0       # Fix C: mandate issued (financial-sector pilots)
 DEFAULT_DEADLINE = 2029.0    # Fix C: "December 2028" deadline = start of 2029
@@ -137,7 +137,7 @@ def scenario(name, r, p, deadline=DEFAULT_DEADLINE):
         tau = np.where(r["u_ts"] < p["base_ts"], c, inf)
         return pqc, tau
 
-    # Fix A: notification accelerates adoption; it can never reduce the
+    # Fix A: legal recognition accelerates adoption; it can never reduce the
     # organic (status quo) adoption, hence the maximum.
     a1 = np.maximum(logistic(c, p["m0"]),
                     logistic(c, p["m1"]) * (c >= NOTIFICATION_YEAR))
